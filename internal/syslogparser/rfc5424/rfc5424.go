@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"time"
 
-	"gopkg.in/mcuadros/go-syslog.v2/internal/syslogparser"
+	"github.com/thevuuranusls/go-syslog/internal/syslogparser"
 )
 
 const (
@@ -588,8 +588,8 @@ func parseUpToLen(buff []byte, cursor *int, l int, maxLen int, e error) (string,
 
 	if found {
 		result = string(buff[*cursor:to])
-	} else if (to > max) {
-		to = max; // don't go past max
+	} else if to > max {
+		to = max // don't go past max
 	}
 
 	*cursor = to
